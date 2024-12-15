@@ -1,0 +1,143 @@
+/* General Styling */
+html, body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 전체 페이지가 화면을 꽉 채우도록 설정 */
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* Game Layout */
+.game-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 85vh; /* 화면의 70% 높이를 차지하도록 설정 */
+    margin: auto;
+    gap: 20px;
+}
+
+.game-panel {
+    flex: 1;
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    max-height: 100%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 세로 정렬을 균등하게 배분 */
+}
+
+/* Add this new CSS rule */
+.game-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.game-panel canvas {
+    margin-bottom: 10px;
+    border: 1px solid white;
+}
+.tetris-panel-container {
+    width: 120px; /* Set a fixed width or adjust as needed */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+/* Multiplayer Layout */
+.players-panel {
+    flex: 2;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 100%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 세로 정렬을 균등하게 배분 */
+}
+
+.players-panel h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2rem; /* 글꼴 크기 추가 */
+}
+
+#multiplayer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* minmax 값 유지 */
+    gap: 10px; /* 간격을 15px에서 10px로 감소 */
+    justify-content: center;
+}
+
+
+/* Button Styling */
+.tetris-button-panel {
+    margin-top: 10px;
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+}
+
+.tetris-button {
+    padding: 10px;
+    text-align: center;
+    background-color: #444;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.tetris-button:hover {
+    background-color: #555;
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column; /* Stack the panels vertically */
+    gap: 20px; /* Add spacing between "Other Players" and "Chat" */
+}
+
+/* Chat Container */
+#chat-container {
+    margin-top: 0; /* Remove default margin */
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.other-player-container {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    display: inline-block;
+    margin-right: 10px;
+}
+.other-player-container p {
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+.other-player-container canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+}

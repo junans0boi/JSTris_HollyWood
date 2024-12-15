@@ -1,0 +1,53 @@
+<h1>상시 서버 업데이트 점검중 -이준환</h1>
+<div class="lobby-container">
+    <div class="left-panel">
+        <div class="profile-section">
+            <div class="profile-card">
+                <div class="nickname-display">
+                    <span id="user-nickname">Loading...</span>
+                </div>
+                <p id="login-prompt" style="display:none;">로그인이 필요합니다.</p>
+                <div class="level-bar">
+                    <span class="level-text">LV. 1</span>
+                    <span class="exp-text">00.00%</span>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">참여중인 사용자</h2>
+        <div id="connected-clients">
+            <ul id="client-list"></ul>
+        </div>
+    </div>
+    
+    <!-- 우측 패널 이하 동일 -->
+    <div class="right-panel">
+        <div class="room-controls">
+            <button id="create-room">방 만들기</button>
+            <button id="refresh">방 목록 새로고침</button>
+        </div>
+        <div id="room-list" class="room-list"></div>
+        <div id="pagination-controls" class="pagination-controls">
+            <button id="prev-page" disabled>&lt;</button>
+            <span id="current-page">1</span> / <span id="total-pages">1</span>
+            <button id="next-page" disabled>&gt;</button>
+        </div>
+        
+        <div class="lobby-chat-container">
+            <div id="lobby-chat-box" class="lobby-chat-box"></div>
+            <div class="lobby-chat-input">
+                <input id="lobby-chat-input" type="text" placeholder="메시지 입력">
+                <button id="lobby-chat-send-button">전송</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="popup">
+    <h2>방 만들기</h2>
+    <input id="room-title" placeholder="방 제목" />
+    <input id="room-password" placeholder="비밀번호 (선택 사항)" />
+    <input id="max-players" type="number" min="2" max="8" placeholder="최대 인원" />
+    <button id="create-room-submit">생성</button>
+    <button id="close-popup">닫기</button>
+</div>

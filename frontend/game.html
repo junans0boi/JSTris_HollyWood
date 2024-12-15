@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplayer Tetris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+</head>
+
+<body id="body">
+    <h1>테.트.리.스</h1>
+    <!-- 메인 게임 레이아웃 -->
+    <div class="game-layout">
+        <!-- 왼쪽 패널: 내 게임 -->
+        <div id="my-game" class="game-panel">
+            <h2>내 게임</h2>
+            <div class="game-content">
+                <canvas id="stage" width="200px" height="400px" style="background-color:black;"></canvas>
+                <div class="tetris-panel-container">
+                    <p>다음 블록 :</p>
+                    <canvas id="next" width="100px" height="100px" style="background-color:black;"></canvas>
+                    <p>저장된 블록 :</p>
+                    <canvas id="stored" width="100px" height="100px" style="background-color:black;"></canvas> <!-- 저장된 블록 추가 -->
+                    <p>몇 줄 깼는가: <span id="lines">0</span></p>
+                    <p id="message"></p>
+                    <p id="players-display"></p> <!-- 플레이어 목록 표시 -->
+                </div>
+            </div>
+            <div id="game-controls" style="text-align: center; margin-top: 10px;">
+                <!-- <button id="add-garbage-button">Add Garbage Line</button> -->
+
+                <button id="leave-room-button">방 나가기</button>
+                <!-- 방장에게만 시작 버튼이 동적으로 추가됩니다 -->
+            </div>
+            <table class="tetris-button-panel">
+                <tr>
+                    <td></td>
+                    <td id="tetris-rotate-button" class="tetris-button">↻</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="tetris-move-left-button" class="tetris-button">←</td>
+                    <td id="tetris-fall-button" class="tetris-button">↓</td>
+                    <td id="tetris-move-right-button" class="tetris-button">→</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 오른쪽 패널: 다른 플레이어와 채팅 -->
+        <div class="right-panel">
+            <!-- 다른 플레이어 -->
+            <div id="other-players" class="players-panel">
+                <h2>다른 플레이어</h2>
+                
+                <div id="multiplayer-container">
+                    <!-- 동적으로 플레이어 화면이 추가됩니다 -->
+                </div>
+            </div>
+
+            <!-- 채팅 컨테이너 -->
+            <div id="chat-container">
+                <div id="chat-box"
+                    style="height: 150px; overflow-y: auto; background: black; padding: 10px; border: 1px solid white;">
+                    <!-- 채팅 메시지가 여기에 표시됩니다 -->
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <input id="chat-input" type="text" placeholder="메시지를 입력하세요..." style="flex: 1; padding: 5px;">
+                    <button id="chat-send-button" style="padding: 5px;">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- main.js를 불러옵니다 -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
